@@ -32,7 +32,7 @@ int main()
 
     int p1=0;
     int p2=0;
-    dfs(p1,p1,0);
+    dfs(p1,p2,0);
     cout<<pillar;
     return 0;
 }
