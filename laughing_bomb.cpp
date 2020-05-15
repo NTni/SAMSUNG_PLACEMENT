@@ -72,7 +72,7 @@ int main()
             for (j = 1; j <= col_size; j++)
                 cin>>citymap[i][j];
 
-        cin>>bomb_col>>bomb_row;
+        cin>>bomb_col>>bomb_row; //these coordinates are 1-based index so if you iterate via 0-index kindly minus 1 from each coordinate
         citymap[bomb_row][bomb_col] = 1;
         traverse(bomb_row, bomb_col,1);
        
