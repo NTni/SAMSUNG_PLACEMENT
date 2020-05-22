@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+float maxprob;
 int calprob(int from[],int to[],float prob[],int nodes,int edges,int moves){
     float dp[moves+1][nodes+1];
     for(int i=0;i<=moves;i++){
@@ -20,7 +20,7 @@ int calprob(int from[],int to[],float prob[],int nodes,int edges,int moves){
             dp[i][k] = temp;
        }
     }
-    float maxprob = dp[moves][0];
+    maxprob = dp[moves][0];
     int index=0;
     for(int i=1;i<=nodes;i++){
         if(maxprob<dp[moves][i]){
@@ -44,11 +44,7 @@ int main() {
 	        cin>>from[i]>>to[i]>>prob[i];
 	    }
 	    int ans = calprob(from,to,prob,nodes,edges,moves);
-	    cout<<ans<<endl;
+	    cout<<ans<<" "<<maxprob<<endl;
 	}
 	return 0;
 }
-2 6 10 40 1 2 0.3 1 3 0.7 3 3 0.2 3 4 0.8 2 4 1 4 5 0.9 4 4 0.1 5 6 1.0 6 3 0.5 6 6 0.5
-   6 10 10 1 2 0.3 1 3 0.7 3 3 0.2 3 4 0.8 2 4 1 4 5 0.9 4 4 0.1 5 6 1.0 6 3 0.5 6 6 0.5
-	=6
-	=3
